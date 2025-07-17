@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS kasus_covid;
