@@ -5,3 +5,6 @@ SELECT
     SUM(meninggal) AS total_meninggal
 FROM kasus_covid
 GROUP BY wilayah;
+
+
+SELECT * FROM kasus_covid;
