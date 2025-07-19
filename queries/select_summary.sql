@@ -8,3 +8,5 @@ GROUP BY wilayah;
 
 
 SELECT * FROM kasus_covid;
+
+SELECT * FROM covid_stats LIMIT 1;
