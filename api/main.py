@@ -12,7 +12,7 @@ app.include_router(covid_routes.router)
 
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+
 
 # Tambahkan baris ini
 app.add_middleware(
