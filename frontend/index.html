@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="style.css" />
 
+<button id="toggleTheme">🌙 Dark Mode</button>
+
 <h2>Statistik COVID-19 Dunia</h2>
 
 <table border="1" id="covid-table">
@@ -51,5 +53,15 @@
         const keyword = this.value.toLowerCase();
         const filtered = covidData.filter((item) => item.country.toLowerCase().includes(keyword));
         renderTable(filtered);
+    });
+    // menambahkan toggle
+    document.getElementById("toggleTheme").addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+        const btn = document.getElementById("toggleTheme");
+        if (document.body.classList.contains("dark-mode")) {
+            btn.textContent = "☀️ Light Mode";
+        } else {
+            btn.textContent = "🌙 Dark Mode";
+        }
     });
 </script>
