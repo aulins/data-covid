@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="style.css" />
+
 <div id="stats">
     <p>Kasus: <span id="cases">Loading...</span></p>
     <p>Sembuh: <span id="recovered">Loading...</span></p>
@@ -5,9 +7,10 @@
 </div>
 
 <script>
-    fetch("http://localhost:8000sama/covid/indonesia")
+    fetch("http://127.0.0.1:8000/covid")
         .then((response) => response.json())
         .then((data) => {
+            console.log("Data diterima:", data);
             const stats = data[0]; // karena kamu return-nya array
             document.getElementById("cases").textContent = stats.cases.toLocaleString();
             document.getElementById("recovered").textContent = stats.recovered.toLocaleString();
