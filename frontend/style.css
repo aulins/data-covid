@@ -2,9 +2,11 @@ body {
     padding-top: 5em;
     background-color: #f4f4f4;
     color: #111;
+    font-family: sans-serif;
     transition: all 0.3s ease;
 }
 
+/* ==================== Dark Mode ==================== */
 .dark-mode {
     background-color: #121212;
     color: #f4f4f4;
@@ -17,8 +19,19 @@ body {
 
 .dark-mode th {
     background-color: #333;
+    color: #f4f4f4;
 }
 
+.dark-mode td {
+    color: #f4f4f4;
+}
+
+.dark-mode button#toggleTheme {
+    background-color: #444;
+    color: #fff;
+}
+
+/* ==================== Theme Toggle Button ==================== */
 button#toggleTheme {
     position: absolute;
     top: 10px;
@@ -27,17 +40,18 @@ button#toggleTheme {
     border: none;
     border-radius: 6px;
     background-color: #ddd;
+    color: #111;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.dark-mode button#toggleTheme {
-    background-color: #444;
-    color: #fff;
-}
+/* ==================== Table Styling ==================== */
 table {
     border-collapse: collapse;
     width: 80%;
     margin: 20px auto;
+    background-color: #fff;
+    color: #111;
 }
 
 th,
@@ -49,11 +63,15 @@ td {
 
 th {
     background-color: #f2f2f2;
+    color: #111;
 }
+
+/* ==================== Heading & Search ==================== */
 h2 {
     display: flex;
     justify-content: center;
 }
+
 #search {
     margin: 20px auto;
     display: block;
