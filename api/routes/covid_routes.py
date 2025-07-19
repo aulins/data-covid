@@ -33,3 +33,15 @@ def get_by_country(country: str):
         ).mappings()
         data = [dict(row) for row in result]
     return data
+
+
+@router.get("/covid/indonesia")
+def get_indonesia_data():
+    with engine.connect() as conn:
+        result = conn.execute(text("""
+            SELECT tanggal, kasus_baru, sembuh, meninggal
+            FROM covid_stats
+            WHERE country ILIKE 'Indonesia'
+            ORDER BY tanggal
+        """)).mappings()
+        return [dict(row) for row in result]

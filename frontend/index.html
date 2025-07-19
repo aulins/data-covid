@@ -1,0 +1,20 @@
+<div id="stats">
+    <p>Kasus: <span id="cases">Loading...</span></p>
+    <p>Sembuh: <span id="recovered">Loading...</span></p>
+    <p>Meninggal: <span id="deaths">Loading...</span></p>
+</div>
+
+<script>
+    fetch("http://localhost:8000sama/covid/indonesia")
+        .then((response) => response.json())
+        .then((data) => {
+            const stats = data[0]; // karena kamu return-nya array
+            document.getElementById("cases").textContent = stats.cases.toLocaleString();
+            document.getElementById("recovered").textContent = stats.recovered.toLocaleString();
+            document.getElementById("deaths").textContent = stats.deaths.toLocaleString();
+        })
+        .catch((error) => {
+            console.error("Error fetching data:", error);
+            document.getElementById("stats").innerHTML = "<p style='color:red;'>Gagal mengambil data</p>";
+        });
+</script>
